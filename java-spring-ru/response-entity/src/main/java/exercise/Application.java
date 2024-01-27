@@ -34,7 +34,7 @@ public class Application {
     public ResponseEntity<List<Post>> allPosts(@RequestParam(defaultValue = "10") Integer limit) {
         var allPosts = posts.stream().limit(limit).toList();
         return ResponseEntity.ok()
-                .header("X-Total-Count", String.valueOf(allPosts.size()))
+                .header("X-Total-Count", String.valueOf(posts.size()))
                 .body(allPosts);
     }
 
